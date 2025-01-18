@@ -2,8 +2,6 @@
 
 import Image from "next/image";
 import ParkingDashboard from '../components/ui/ParkingDashboard';
-import Link from 'next/link';
-
 
 export default function Home() {
   return (
@@ -39,7 +37,7 @@ export default function Home() {
               <p className="mt-2 text-gray-600 dark:text-gray-300">Reduce traffic congestion and carbon emissions with efficient parking management.</p>
             </div>
           </section>
-          {/*<section className="mt-16">
+          <section className="mt-16">
               <ParkingDashboard />
           </section>
           {/* Call-to-Action Section */}
@@ -47,14 +45,18 @@ export default function Home() {
             <h2 className="text-3xl font-semibold text-foreground dark:text-foreground">Get Started with Smart Parking</h2>
             <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">Join the future of parking today and experience convenience at your fingertips.</p>
             <div className="mt-8 flex justify-center gap-8">
-            <Link href="/free-parking" 
-            className="border-2 border-black text-black rounded-full px-8 py-3 text-xl transition hover:bg-black hover:text-white">
-            Available free parking
-          </Link>
-          <Link href="/paid-parking" 
-          className="border-2 border-black text-black rounded-full px-8 py-3 text-xl transition hover:bg-black hover:text-white">
-            Book paid parking
-          </Link>
+              <a
+                href="#"
+                className="border-2 border-black text-black rounded-full px-8 py-3 text-xl transition hover:bg-black hover:text-white"
+              >
+                Available free parking
+              </a>
+              <a
+                href="#"
+                className="border-2 border-black text-black rounded-full px-8 py-3 text-xl transition hover:bg-black hover:text-white"
+              >
+              Book paid parking
+              </a>
             </div>
           </div>
         </div>
