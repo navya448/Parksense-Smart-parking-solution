@@ -1,0 +1,49 @@
+// Define IR sensor pins for Spot 1
+const int spot1SensorA = 2; // IR Sensor A for Spot 1
+const int spot1SensorB = 3; // IR Sensor B for Spot 1
+
+// Define IR sensor pins for Spot 2
+const int spot2SensorA = 4; // IR Sensor A for Spot 2
+const int spot2SensorB = 5; // IR Sensor B for Spot 2
+
+// Variables to store sensor states
+int spot1SensorAState = 0;
+int spot1SensorBState = 0;
+int spot2SensorAState = 0;
+int spot2SensorBState = 0;
+
+void setup() {
+  Serial.begin(9600); // Initialize Serial Monitor
+  
+  // Set sensor pins as input
+  pinMode(spot1SensorA, INPUT);
+  pinMode(spot1SensorB, INPUT);
+  pinMode(spot2SensorA, INPUT);
+  pinMode(spot2SensorB, INPUT);
+}
+
+void loop() {
+  // Read sensor states for Spot 1
+  spot1SensorAState = digitalRead(spot1SensorA);
+  spot1SensorBState = digitalRead(spot1SensorB);
+
+  // Determine the status for Spot 1
+  if (spot1SensorAState == LOW && spot1SensorBState == LOW) {
+    Serial.println("Spot 1: Car detected!");
+  } else {
+    Serial.println("Spot 1: Empty.");
+  }
+
+  // Read sensor states for Spot 2
+  spot2SensorAState = digitalRead(spot2SensorA);
+  spot2SensorBState = digitalRead(spot2SensorB);
+
+  // Determine the status for Spot 2
+  if (spot2SensorAState == LOW && spot2SensorBState == LOW) {
+    Serial.println("Spot 2: Car detected!");
+  } else {
+    Serial.println("Spot 2: Empty.");
+  }
+
+  delay(500); // Short delay for stability
+}

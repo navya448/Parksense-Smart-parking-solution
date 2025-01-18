@@ -39,11 +39,13 @@ def read_from_arduino():
             if ser.in_waiting > 0:
                 data = ser.readline().decode('utf-8').strip()
                 # Update parking status based on Arduino message
-                if "Car detected in the spot!" in data:
+                if "Spot 1: Car detected!" in data:
                     parking_status["spot1Empty"] = False
+                elif "Spot 2: Car detected!" in data:
                     parking_status["spot2Empty"] = False
-                elif "Spot is empty." in data:
+                elif "Spot 1: Empty." in data:
                     parking_status["spot1Empty"] = True
+                elif "Spot 2: Empty." in data:
                     parking_status["spot2Empty"] = True
                 print(f"Updated parking status: {parking_status}")
     except serial.SerialException as e:
