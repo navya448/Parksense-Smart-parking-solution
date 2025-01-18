@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import ParkingDashboard from '../components/ui/ParkingDashboard';
 
 export default function Home() {
   return (
@@ -34,7 +37,9 @@ export default function Home() {
               <p className="mt-2 text-gray-600 dark:text-gray-300">Reduce traffic congestion and carbon emissions with efficient parking management.</p>
             </div>
           </section>
-
+          <section className="mt-16">
+              <ParkingDashboard />
+          </section>
           {/* Call-to-Action Section */}
           <div className="mt-16 text-center">
             <h2 className="text-3xl font-semibold text-foreground dark:text-foreground">Get Started with Smart Parking</h2>
