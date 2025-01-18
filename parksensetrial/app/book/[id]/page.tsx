@@ -22,8 +22,8 @@ const BookingForm: React.FC = () => {
   if (bookingConfirmed) {
     return (
       <div className="text-center p-8">
-        <h2 className="text-2xl font-semibold">Booking Confirmed!</h2>
-        <p className="mt-4">Your booking for Space {id} is confirmed.</p>
+        <h2 className="text-2xl font-semibold">Booking Confirmed !</h2>
+        <p className="mt-4">Your booking for Space {id} is confirmed.<br></br>Now you just need to scan the QR at exit.</p>
         <QRCode
           value={`Parking Slot: ${id}, Name: ${formData.name}, Vehicle: ${formData.vehicle}`}
           className="mx-auto mt-8"
@@ -62,7 +62,7 @@ const BookingForm: React.FC = () => {
         </div>
         <button
           type="submit"
-          className="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          className="w-full px-4 py-2 bg-black text-white rounded hover:bg-black"
         >
           Confirm Booking
         </button>
